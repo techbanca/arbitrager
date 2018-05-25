@@ -1,4 +1,4 @@
-#How it Works
+# How it Works
 
 The basic premise of arbitrage is to buy something for one price and instantly sell it for another. In our case, we want to find a currency with a price discrepancy, e.g. one where converting between multiple currencies will eventually lead you to make more money in your starting currency than you began with. If we assume we have $1, our goal is to convert our money until we end up with x<$1.
 

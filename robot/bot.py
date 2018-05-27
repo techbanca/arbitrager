@@ -50,7 +50,7 @@ margin = 0.001
 cutoff = 0.002
 base_a = 'BTC'
 base_b = 'ETH'
-depth = 5
+depth = 6
 
 # Name our base_pair
 #base_pair = base_a + '_' + base_b
@@ -82,13 +82,8 @@ while True:
     
     # Calculate the Flow
     flow = getFlow(spread, flow, fees)
-    print()
     print(flow)
-    
 
-    
-    
-    
     
     '''
     # Get the ticker

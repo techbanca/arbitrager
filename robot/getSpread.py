@@ -4,6 +4,7 @@ def getSpread(base_a, base_b, currencies, spread, depth, polo):
     spread[0][0] = temp[base_pair]['bids']
     spread[0][1] = temp[base_pair]['asks']
     for i in range(len(currencies)):
+        f_pair = 0
         f_pair = base_a + '_' + currencies[i]
         b_pair = base_b + '_' + currencies[i]
         spread[i+1] = [temp[f_pair]['bids'],temp[f_pair]['asks'],temp[b_pair]['bids'],temp[b_pair]['asks']] 

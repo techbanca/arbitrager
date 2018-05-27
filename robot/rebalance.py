@@ -2,7 +2,7 @@ def rebalance( currencies, polo ):
     for i in range(len(currencies)):
         while True:
             temp = polo.returnBalances()
-            if(float(temp[currencies[i]]) > 0.009):
+            if(float(temp[currencies[i]]) > 0.005):
                 # Push it to Bitcoin
                 pair = 'BTC_' + currencies[i]
                 v = float(temp[currencies[i]])
@@ -17,7 +17,7 @@ def rebalance( currencies, polo ):
         while True:
             v = float(polo.returnBalances()['ETH'])
             if(float(temp['ETH']) > 0.0009):
-                #v = float(temp['ETH'])
+                v = float(temp['ETH'])
                 while True:
                     try:
                         c = polo.sell('BTC_ETH', BTC_ETH_BID, v)

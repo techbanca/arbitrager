@@ -27,5 +27,7 @@ def topAskBid(pair):
     ask = float(orders['asks'][0][0])
 
     bid = float(orders['bids'][0][0])
+    bid2 = float(orders['bids'][0][1])
 
     return ask, bid
+

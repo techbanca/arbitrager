@@ -1,11 +1,11 @@
 # coding=utf-8
 
-
 class BigoneAPIException(Exception):
     """Exception class to handle general API Exceptions
         `code` values
         `message` format
     """
+    
     def __init__(self, response):
         self.code = ''
         self.message = 'Unknown Error'

@@ -2,15 +2,10 @@
 #!/usr/bin/env python
 
 import urllib
-
 import urllib2
-
 import json
-
 import time
-
 import hmac
-
 import hashlib
 
 
@@ -25,7 +20,7 @@ class bittrex(object):
 
         self.secret = secret
 
-        self.public = ['getmarkets', 'getcurrencies', 'getticker', 'getmarketsummaries', 'getmarketsummary', 'getorderbook', 'getmarkethistory']
+        self.public = ['', 'getmarkets', 'getcurrencies', 'getticker', 'getmarketsummaries', 'getmarketsummary', 'getorderbook', 'getmarkethistory']
 
         self.market = ['buylimit', 'buymarket', 'selllimit', 'sellmarket', 'cancel', 'getopenorders']
 

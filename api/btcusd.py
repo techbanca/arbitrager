@@ -10,15 +10,13 @@ from .market import Market
 
 
 
-
-
 class BtceUSD(Market):
 
     def __init__(self):
 
         super(BtceUSD, self).__init__("USD")
 
-        self.update_rate = 60
+        self.update_rate = 30
 
 
 
@@ -40,8 +38,6 @@ class BtceUSD(Market):
 
         self.depth = self.format_depth(depth)
 
-
-
     def sort_and_format(self, l, reverse=False):
 
         l.sort(key=lambda x: float(x[0]), reverse=reverse)
@@ -55,7 +51,6 @@ class BtceUSD(Market):
         return r
 
 
-
     def format_depth(self, depth):
 
         bids = self.sort_and_format(depth['bids'], True)
@@ -63,7 +58,6 @@ class BtceUSD(Market):
         asks = self.sort_and_format(depth['asks'], False)
 
         return {'asks': asks, 'bids': bids}
-
 
 
 if __name__ == "__main__":

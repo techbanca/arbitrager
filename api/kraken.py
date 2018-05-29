@@ -5,17 +5,18 @@
 
 @documentation: https://www.kraken.com/en-us/help/api#general-usage
 """
-
 import requests
 
 def getOrders(pair, depth):
+    
     url = 'https://api.kraken.com/0/public/Depth?pair='+pair+'&count='+depth
+    
     r = requests.get(url)
     return r.json()
     
 def topAskBid(pair):
     orders = getOrders(pair, '1')['result'][pair]
-    ask = float(orders['asks'][0][0])
+    ask = float(orders['asks'][0][1])
     bid = float(orders['bids'][0][0])
     return ask, bid
 

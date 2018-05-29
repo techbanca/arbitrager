@@ -16,7 +16,7 @@ def getOrders(pair, depth):
     
 def topAskBid(pair):
     orders = getOrders(pair, '1')['result'][pair]
-    ask = float(orders['asks'][0][1])
+    ask = float(orders['asks'][0][0])
     bid = float(orders['bids'][0][0])
     return ask, bid
 

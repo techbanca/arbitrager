@@ -22,7 +22,7 @@ class BtceEUR(Market):
 
         # keep 2500 for other operations
 
-        self.update_rate = 60
+        self.update_rate = 30
 
 
 

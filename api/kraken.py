@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
+
+
 @documentation: https://www.kraken.com/en-us/help/api#general-usage
 """
 
@@ -26,6 +28,8 @@ def top5(pair):
     for bid in bids:
         formattedBids.append((float(bid[0]), float(bid[1]), 'kraken'))
     return formattedAsks, formattedBids
+
+
 
 """#x = requests.get('https://api.kraken.com/0/public/AssetPairs').json()['result']
 xkeys = ['DASHEUR', 'DASHUSD', 'DASHXBT', 'EOSETH', 'EOSEUR', 'EOSUSD', 'EOSXBT', 'GNOETH', 'GNOEUR', 'GNOUSD', 'GNOXBT', 'USDTZUSD', 'XETCXETH', 'XETCXXBT', 'XETCZEUR', 'XETCZUSD', 'XETHXXBT', 'XETHXXBT.d', 'XETHZCAD', 'XETHZCAD.d', 'XETHZEUR', 'XETHZEUR.d', 'XETHZGBP', 'XETHZGBP.d', 'XETHZJPY', 'XETHZJPY.d', 'XETHZUSD', 'XETHZUSD.d', 'XICNXETH', 'XICNXXBT', 'XLTCXXBT', 'XLTCZEUR', 'XLTCZUSD', 'XMLNXETH', 'XMLNXXBT', 'XREPXETH', 'XREPXXBT', 'XREPZEUR', 'XREPZUSD', 'XXBTZCAD', 'XXBTZCAD.d', 'XXBTZEUR', 'XXBTZEUR.d', 'XXBTZGBP', 'XXBTZGBP.d', 'XXBTZJPY', 'XXBTZJPY.d', 'XXBTZUSD', 'XXBTZUSD.d', 'XXDGXXBT', 'XXLMXXBT', 'XXLMZEUR', 'XXLMZUSD', 'XXMRXXBT', 'XXMRZEUR', 'XXMRZUSD', 'XXRPXXBT', 'XXRPZCAD', 'XXRPZEUR', 'XXRPZJPY', 'XXRPZUSD', 'XZECXXBT', 'XZECZEUR', 'XZECZUSD']

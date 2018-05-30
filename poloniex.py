@@ -6,7 +6,6 @@ import hmac,hashlib
 
 try:
 
-    # For Python 3.0 and later
 
     from urllib.request import urlopen, Request
 
@@ -27,7 +26,6 @@ def createTimeStamp(datestr, format="%Y-%m-%d %H:%M:%S"):
     return time.mktime(time.strptime(datestr, format))
 
 
-
 class poloniex:
 
     def __init__(self, APIKey, Secret):
@@ -37,12 +35,9 @@ class poloniex:
         self.Secret = Secret
 
 
-
     def post_process(self, before):
 
         after = before
-
-
 
         # Add timestamps if there isnt one but is a datetime
 
@@ -58,15 +53,11 @@ class poloniex:
 
                             after['return'][x]['timestamp'] = float(createTimeStamp(after['return'][x]['datetime']))
 
-
-
         return after
 
 
 
     def api_query(self, command, req={}):
-
-
 
         if(command == "returnTicker" or command == "return24Volume"):
 
@@ -148,7 +139,7 @@ class poloniex:
 
     # Outputs: 
 
-    # {"BTC":"0.59098578","LTC":"3.31117268", ... }
+    # {"BTC":"0.59098578","LTC":"3.31117269", ... }
 
     def returnBalances(self):
 

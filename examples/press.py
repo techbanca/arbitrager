@@ -39,9 +39,7 @@ logger.addHandler(rotateHandler)
 logger.setLevel(logging.INFO)
 #logger.info("init!")
 
-
-
-api_key='XXXXXXX'
+api_key='XXXXXXXXXXXX'
 
 client = Client(api_key)
 
@@ -83,15 +81,12 @@ while(i<total_time):
 
     p6 = multiprocessing.Process(target=client.get_accounts_fb, args=(re_output_p6,))
 
-
-
     p1.start()  # process of get_depth_btc_idr
     p2.start()  # process of get_depth_str_btc
     p3.start()  # process of get_depth_str_idr
     p4.start()  # process of get_depth_str_idr
     p5.start()  # process of get_depth_str_idr
     p6.start()  # process of get_depth_str_idr
-
 
     p1.join(timeout=process_timeout)
     p2.join(timeout=process_timeout)
@@ -143,13 +138,9 @@ while(i<total_time):
         logger.info("output for p6:{0}".format(arr_re_p6))
     else:
         print("error!empty queue")
-
-
     logger.info("this time finished!")
     time.sleep(interval)
     i+=1
-
-
 
 depth = client.get_order_book('EOS-BTC')
 logger.info(depth)

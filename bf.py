@@ -1,12 +1,11 @@
 import math, urllib2, json, re
 
-
 def download():
 	graph = {}
 	page = urllib2.urlopen("http://fx.priceonomics.com/v1/rates/?q=1")
 	jsrates = json.loads(page.read())
 
-	pattern = re.compile("([A-Z]{3})_([A-Z]{3})")
+	pattern = re.compile("([A-Z]{3})_([A-Z]{5})")
 	for key in jsrates:
 		matches = pattern.match(key)
 		conversion_rate = -math.log(float(jsrates[key]))
@@ -47,7 +46,6 @@ def retrace_negative_loop(p, start):
 			arbitrageLoop = arbitrageLoop[arbitrageLoop.index(next_node):]
 			return arbitrageLoop
 
-
 def bellman_ford(graph, source):
     d, p = initialize(graph, source)
     for i in range(len(graph)-1): #Run this until is converges
@@ -64,7 +62,6 @@ def bellman_ford(graph, source):
     return None
 
 paths = []
-
 graph = download()
 
 for key in graph:
@@ -76,7 +73,7 @@ for path in paths:
 	if path == None:
 		print("No opportunity here :(")
 	else:
-		money = 100
+		money = 200
 		print "Starting with %(money)i in %(currency)s" % {"money":money,"currency":path[0]}
 
 		for i,value in enumerate(path):

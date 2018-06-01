@@ -4,15 +4,14 @@ class BigoneAPIException(Exception):
     """Exception class to handle general API Exceptions
         `code` values
         `message` format
-    """
-    
+    """ 
     def __init__(self, response):
         self.code = ''
         self.message = 'Unknown Error'
         try:
             json_res = response.json()
         except ValueError:
-            print("Can't parse error response: {}".format(response.text))
+            print("Cant parse error response: {}".format(response.text))
             self.message = response.content
         else:
             print("doing something with json_res: {}".format(json_res))
@@ -29,7 +28,6 @@ class BigoneAPIException(Exception):
 
     def __str__(self):
         return 'BigoneAPIException {}: {}'.format(self.code, self.message)
-
 
 class BigoneRequestException(Exception):
     def __init__(self, message):

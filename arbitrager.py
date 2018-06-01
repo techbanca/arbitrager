@@ -6,7 +6,6 @@ from arbitrage import public_markets
 from arbitrage import observers
 from arbitrage import config
 
-
 class Arbitrer(object):
     def __init__(self):
         self.markets = []
@@ -86,7 +85,7 @@ class Arbitrer(object):
         return profit, sell_total, w_buyprice, w_sellprice
 
     def get_max_depth(self, kask, kbid):
-        i = 0
+        i = 1
         if len(self.depths[kbid]["bids"]) != 0 and \
            len(self.depths[kask]["asks"]) != 0:
             while self.depths[kask]["asks"][i]["price"] \
@@ -94,7 +93,7 @@ class Arbitrer(object):
                 if i >= len(self.depths[kask]["asks"]) - 1:
                     break
                 i += 1
-        j = 0
+        j = 1
         if len(self.depths[kask]["asks"]) != 0 and \
            len(self.depths[kbid]["bids"]) != 0:
             while self.depths[kask]["asks"][0]["price"] \

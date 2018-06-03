@@ -2,10 +2,7 @@
 from api_wrappers import CryptoMKT, SurBTC, Pushbullet
 
 import time
-
 import vars
-
-
 
 
 
@@ -16,16 +13,10 @@ def check_price_differences(threshold, check_delay):
     while True:
 
         cryptomkt_prices = CryptoMKT.get_prices()
-
         surbtc_prices = SurBTC.get_prices()
 
-
-
         print(cryptomkt_prices)
-
         print(surbtc_prices)
-
-
 
         if cryptomkt_prices['bid'] - surbtc_prices['ask'] >= threshold:
 

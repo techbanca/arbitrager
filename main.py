@@ -52,8 +52,7 @@ class ArbitrerCLI:
         pmarketsi = []
         for pmarket in pmarkets:
             exec('import arbitrage.private_markets.' + pmarket.lower())
-            market = eval('arbitrage.private_markets.' + pmarket.lower()
-                          + '.Private' + pmarket + '()')
+            market = eval('arbitrage.private_markets.' + pmarket.lower() + '.Private' + pmarket + '()')
             pmarketsi.append(market)
         for market in pmarketsi:
             print(market)
@@ -83,7 +82,7 @@ class ArbitrerCLI:
         parser.add_argument("-o", "--observers", type=str,
                             help="observers, example: -oLogger,Emailer")
         parser.add_argument("-m", "--markets", type=str,
-                            help="markets, example: -m BitstampEUR,KrakenEUR")
+                            help="markets, example: -m BitstampEUR, KrakenEUR")
         parser.add_argument("command", nargs='*', default="watch",
                             help='verb: "watch|replay-history|get-balance|list-public-markets"')
         args = parser.parse_args()

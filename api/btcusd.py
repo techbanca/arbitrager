@@ -1,13 +1,9 @@
 import urllib.request
-
 import urllib.error
-
 import urllib.parse
-
 import json
 
 from .market import Market
-
 
 
 class BtceUSD(Market):
@@ -16,7 +12,7 @@ class BtceUSD(Market):
 
         super(BtceUSD, self).__init__("USD")
 
-        self.update_rate = 30
+        self.update_rate = 60
 
 
 
@@ -58,7 +54,6 @@ class BtceUSD(Market):
         asks = self.sort_and_format(depth['asks'], False)
 
         return {'asks': asks, 'bids': bids}
-
 
 if __name__ == "__main__":
 

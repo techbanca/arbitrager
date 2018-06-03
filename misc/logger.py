@@ -1,12 +1,7 @@
 import time
-
 import requests
-
 import json
-
 import threading
-
-
 
 class aggregator:
 
@@ -27,9 +22,7 @@ class aggregator:
         if isinstance(l, list):
 
             self.lagg += l
-
         else:
-
             self.lagg.append(l)
 
     
@@ -49,9 +42,6 @@ class aggregator:
             if callable(getattr(logger, 'shutdown', None)):
 
                 logger.shutdown()
-
-
-
 
 
 class console_logger:
